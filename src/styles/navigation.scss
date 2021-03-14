@@ -1,9 +1,11 @@
 .navigation {
+  position: fixed;
   width: 100vw;
   height: 55px;
   display: flex;
   align-items: center;
-  background: rgba(16, 16, 16, 0.8);
+  background: rgba(36, 36, 36, 0.9);
+  z-index: 200;
   &__leftSide {
     flex-basis: 30%;
     display: flex;
@@ -46,14 +48,14 @@
   &__submit,
   &__searchIcon {
     font-size: 1.8rem;
-    margin: 0 8px;
+    margin: 0 15px;
     color: white;
     cursor: pointer;
   }
   &__profile {
-    width: 40px;
-    height: 40px;
-    margin-left: 10px;
+    width: 35px;
+    height: 35px;
+    margin: 0 30px 0 15px;
     border-radius: 50%;
     cursor: pointer;
   }

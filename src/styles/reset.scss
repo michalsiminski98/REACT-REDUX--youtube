@@ -1,11 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto";
 }
 html {
   font-size: 62.5%;
 }
 body {
   background: rgb(24, 24, 24);
+  // overflow-x: hidden;
+}
+
+// scrollbar
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(24, 24, 24);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(95, 95, 95);
 }
