@@ -4,7 +4,7 @@
   height: 55px;
   display: flex;
   align-items: center;
-  background: rgba(36, 36, 36, 0.9);
+  background: rgba(36, 36, 36, 0.97);
   z-index: 200;
   &__leftSide {
     flex-basis: 30%;
@@ -46,11 +46,15 @@
   &__board,
   &__bell,
   &__submit,
-  &__searchIcon {
+  &__searchIcon,
+  &__searchIconMobile {
     font-size: 1.8rem;
     margin: 0 15px;
     color: white;
     cursor: pointer;
+  }
+  &__searchIcon{
+    display: none;
   }
   &__profile {
     width: 35px;
@@ -58,6 +62,90 @@
     margin: 0 30px 0 15px;
     border-radius: 50%;
     cursor: pointer;
+  }
+  &__bell-messsage{
+    display: none;
+    position: absolute;
+    width: 350px;
+    height: 500px;
+    transform: translateX(-350px);
+    background: rgba(36, 36, 36, 0.97);
+    border: 1px solid #373737;
+    border-top: none;
+  }
+  &__board-messsage{
+    display: none;
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    transform: translateX(-250px);
+    background: rgba(36, 36, 36, 0.97);
+    border: 1px solid #373737;
+    border-top: none;
+  }
+  &__submit-messsage{
+    display: none;
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    transform: translateX(-250px);
+    background: rgba(36, 36, 36, 0.97);
+    border: 1px solid #373737;
+    border-top: none;
+  }
+  &__h2{
+    margin: 15px 10px;
+    font-size: 1.7rem;
+  }
+  hr{
+    border: 0;
+    border-top: 1px solid #373737;
+  }
+  &__mobileSearch{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    .navigation{
+      &__back{
+        margin-right: 10px;
+        color: white;
+        font-size: 2.3rem;
+        cursor: pointer;
+      }
+      &__searchButtonMobile {
+        border: 1px solid rgb(44, 44, 44);
+        background: rgb(44, 44, 44);
+        cursor: pointer;
+      }
+      &__searchInputMobile {
+        width: 50%;
+        height: 18px;
+        padding: 5px;
+        box-sizing: content-box;
+        display: block;
+        background: rgb(19, 19, 19);
+        border: 1px solid rgb(44, 44, 44);
+        color: white;
+        font-size: 1.4rem;
+      }
+      &__searchIconMobile {
+        display: block;
+        width: 40px;
+        height: 28px;
+        line-height: 28px;
+        font-size: 1.4rem;
+        color: rgb(111, 111, 111);
+        cursor: pointer;
+      }
+    }
+  }
+  &__barBackground{
+    position: fixed;
+    width: 100vw;
+    height: 4000px;
+    background-color: black;
+    opacity: .5;
   }
 }
 
@@ -83,12 +171,16 @@
       font-size: 1.4rem;
     }
     &__searchIcon {
+      display: block;
       width: 40px;
       height: 28px;
       line-height: 28px;
       font-size: 1.4rem;
       color: rgb(111, 111, 111);
       cursor: pointer;
+    }
+    &__searchIconMobile{
+      display: none;
     }
   }
 }
