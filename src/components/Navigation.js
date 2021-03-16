@@ -4,30 +4,43 @@ import '../styles/navigation.scss'
 
 const Navigation = () => {
 
-  const [notificationActive, setNotificationActive] = useState(false);
-  const [boardActive, setBoardActive] = useState(false);
-  const [submitActive, setSubmitActive] = useState(false);
+  const [leftBarActive, setLeftBarActive] = useState(false);
   const [searchActive, setSearchActive] = useState(false);
+  const [submitActive, setSubmitActive] = useState(false);
+  const [boardActive, setBoardActive] = useState(false);
+  const [notificationActive, setNotificationActive] = useState(false);
 
-  const handleBellClick = () => {
-    notificationActive === false ? 
-    document.querySelector('.navigation__bell-messsage').style.display='block' :
-    document.querySelector('.navigation__bell-messsage').style.display='none';
-    setNotificationActive(!notificationActive);
-  }
 
-  const handleBoardClick = () => {
-    boardActive === false ? 
-    document.querySelector('.navigation__board-messsage').style.display='block' :
-    document.querySelector('.navigation__board-messsage').style.display='none';
-    setBoardActive(!boardActive);
-  }
-
-  const handleSubmitClick = () => {
-    submitActive === false ? 
-    document.querySelector('.navigation__submit-messsage').style.display='block' :
-    document.querySelector('.navigation__submit-messsage').style.display='none';
-    setSubmitActive(!submitActive);
+  const handleLeftBar = () => {
+    let x, animation;
+    let barMenu = document.querySelector('.barMenu');
+    if(leftBarActive ===false){
+      // bgc
+      document.querySelector('.barBackground').style.display='block';
+      // leftMenu
+      x=-100;
+      const showCloseMenu = () => {
+        x+=10;
+        barMenu.style.transform=`translateX(${x}%)`;
+        animation = requestAnimationFrame(showCloseMenu);
+        x===0 && cancelAnimationFrame(animation);
+      }
+      showCloseMenu();
+      setLeftBarActive(!leftBarActive);
+    }else{
+      // bgc
+      document.querySelector('.barBackground').style.display='none';
+      // leftMenu
+      x=0;
+      const showCloseMenu = () => {
+        x-=10;
+        barMenu.style.transform=`translateX(${x}%)`;
+        animation = requestAnimationFrame(showCloseMenu);
+        x===-100 && cancelAnimationFrame(animation);
+      }
+      showCloseMenu();
+      setLeftBarActive(!leftBarActive);
+    }
   }
 
   const handleSearchActivityClick = () => {
@@ -43,12 +56,46 @@ const Navigation = () => {
     setSearchActive(!searchActive);
   }
 
+  const handleSubmitClick = () => {
+    submitActive === false ? 
+    document.querySelector('.navigation__submit-messsage').style.display='block' :
+    document.querySelector('.navigation__submit-messsage').style.display='none';
+    setSubmitActive(!submitActive);
+  }
+  
+  const handleBoardClick = () => {
+    boardActive === false ? 
+    document.querySelector('.navigation__board-messsage').style.display='block' :
+    document.querySelector('.navigation__board-messsage').style.display='none';
+    setBoardActive(!boardActive);
+  }
+
+  const handleBellClick = () => {
+    notificationActive === false ? 
+    document.querySelector('.navigation__bell-messsage').style.display='block' :
+    document.querySelector('.navigation__bell-messsage').style.display='none';
+    setNotificationActive(!notificationActive);
+  }
+
   return ( 
+  <>
+    <div className="barMenu">
+        <div className="barMenu__main">
+          <div className="navigation__bar">
+          <i className="fas fa-bars navigation__barIcon" onClick={handleLeftBar}></i>
+          </div>
+          <img className="navigation__logo" src="https://logofirmy.net/wp-content/uploads/2020/04/YouTube-Logo.png" alt="youtube logo"/>
+      </div>
+      <hr/>
+      <div className="barMenu__firstSection">
+        <h3 className="barMenu__item"><i className="fas fa-home"></i> Strona główna</h3>
+      </div>
+    </div>
+    <div className="barBackground">
+    </div>
     <nav className='navigation'>
-      {/* <div className="navigation__barBackground">
-      </div> */}
       <div className="navigation__leftSide">
-        <div className="navigation__bar">
+        <div className="navigation__bar" onClick={handleLeftBar}>
         <i className="fas fa-bars navigation__barIcon"></i>
         </div>
         <img className="navigation__logo" src="https://logofirmy.net/wp-content/uploads/2020/04/YouTube-Logo.png" alt="youtube logo"/>
@@ -85,6 +132,7 @@ const Navigation = () => {
         </button>
       </div>
     </nav>
+  </>
    );
 }
  
