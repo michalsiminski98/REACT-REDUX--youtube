@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import '../styles/navigation.scss'
 
@@ -77,6 +78,7 @@ const Navigation = () => {
     setNotificationActive(!notificationActive);
   }
 
+
   return ( 
   <>
     <div className="barMenu">
@@ -84,21 +86,27 @@ const Navigation = () => {
           <div className="navigation__bar">
           <i className="fas fa-bars navigation__barIcon" onClick={handleLeftBar}></i>
           </div>
-          <img className="navigation__logo" src="https://logofirmy.net/wp-content/uploads/2020/04/YouTube-Logo.png" alt="youtube logo"/>
+          <Link to='/'>
+            <img className="navigation__logo" src="https://logofirmy.net/wp-content/uploads/2020/04/YouTube-Logo.png" alt="youtube logo"/> 
+          </Link>
       </div>
       <hr/>
-      <div className="barMenu__firstSection">
-        <h3 className="barMenu__item"><i className="fas fa-home"></i> Strona główna</h3>
-      </div>
+      <Link to='/'>
+        <div className="barMenu__firstSection">
+          <h3 className="barMenu__item"><i className="fas fa-home"></i> Strona główna</h3>
+        </div>
+      </Link>
     </div>
-    <div className="barBackground">
+    <div className="barBackground" onClick={handleLeftBar}>
     </div>
     <nav className='navigation'>
       <div className="navigation__leftSide">
         <div className="navigation__bar" onClick={handleLeftBar}>
         <i className="fas fa-bars navigation__barIcon"></i>
         </div>
-        <img className="navigation__logo" src="https://logofirmy.net/wp-content/uploads/2020/04/YouTube-Logo.png" alt="youtube logo"/>
+        <Link to=''>
+          <img className="navigation__logo" src="https://logofirmy.net/wp-content/uploads/2020/04/YouTube-Logo.png" alt="youtube logo"/>
+        </Link>
       </div>
       <div className="navigation__rightSide">
         <i className="fas fa-search navigation__searchIconMobile" onClick={handleSearchActivityClick}></i>

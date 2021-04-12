@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto";
+  text-decoration: none;
 }
 html {
   font-size: 62.5%;
@@ -13,7 +14,7 @@ body {
   background: rgb(24, 24, 24);
   // overflow-x: hidden;
 }
-hr{
+hr {
   border: 0;
   border-top: 1px solid #373737;
 }
