@@ -11,7 +11,6 @@ const Navigation = () => {
   const [boardActive, setBoardActive] = useState(false);
   const [notificationActive, setNotificationActive] = useState(false);
 
-
   const handleLeftBar = () => {
     let x, animation;
     let barMenu = document.querySelector('.barMenu');
@@ -58,6 +57,7 @@ const Navigation = () => {
   }
 
   const handleSubmitClick = () => {
+    hideNavElements();
     submitActive === false ? 
     document.querySelector('.navigation__submit-messsage').style.display='block' :
     document.querySelector('.navigation__submit-messsage').style.display='none';
@@ -65,6 +65,7 @@ const Navigation = () => {
   }
   
   const handleBoardClick = () => {
+    hideNavElements();
     boardActive === false ? 
     document.querySelector('.navigation__board-messsage').style.display='block' :
     document.querySelector('.navigation__board-messsage').style.display='none';
@@ -72,10 +73,20 @@ const Navigation = () => {
   }
 
   const handleBellClick = () => {
+    hideNavElements();
     notificationActive === false ? 
     document.querySelector('.navigation__bell-messsage').style.display='block' :
     document.querySelector('.navigation__bell-messsage').style.display='none';
     setNotificationActive(!notificationActive);
+  }
+
+  const hideNavElements = () => {
+    document.querySelector('.navigation__board-messsage').style.display='none';
+    document.querySelector('.navigation__submit-messsage').style.display='none';
+    document.querySelector('.navigation__bell-messsage').style.display='none';
+    setSubmitActive(false);
+    setBoardActive(false);
+    setNotificationActive(false);
   }
 
 
