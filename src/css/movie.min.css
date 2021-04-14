@@ -1,0 +1,2 @@
+.movie{padding-top:80px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.movie__movie{width:95vw;margin-left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);min-height:70vh;overflow-x:hidden}.movie__iframe{width:100%;height:52vw;margin-bottom:15px}.movie__hashtags{color:#3ea6ff;font-size:1.2rem}.movie__title{font-size:2.5rem;color:white}
+/*# sourceMappingURL=movie.min.css.map */

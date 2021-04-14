@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom'
-import '../styles/menu.scss'
+import { Link } from 'react-router-dom';
 
 const Menu = () => {
 
@@ -124,10 +123,10 @@ const Menu = () => {
 };
 
     // redux for showing products from itemReducer.js
-    const mapStateToProps = state => {
-      return {
-          movies: state.movies.movies,
-      }
-  }
+  //   const mapStateToProps = state => {
+  //     return {
+  //         movies: state.movies.movies,
+  //     }
+  // }
  
 export default Menu;

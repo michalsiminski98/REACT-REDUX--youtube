@@ -1,6 +1,5 @@
 import Navigation from './Navigation' 
 import Page from './Page' 
-import Footer from './Footer' 
 import { BrowserRouter } from 'react-router-dom';
 
 function App() {
@@ -8,7 +7,6 @@ function App() {
     <BrowserRouter>
       <Navigation/>
       <Page/>
-      {/* <Footer/> */}
     </BrowserRouter>
   );
 }

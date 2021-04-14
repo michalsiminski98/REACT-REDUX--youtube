@@ -1,5 +1,3 @@
-import '../styles/movie.scss'
-
 const Movie = () => {
   return (
     <section className="movie">

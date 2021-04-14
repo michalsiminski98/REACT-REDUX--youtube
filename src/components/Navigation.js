@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import '../styles/navigation.scss'
-
 const Navigation = () => {
 
   const [leftBarActive, setLeftBarActive] = useState(false);
@@ -115,8 +113,8 @@ const Navigation = () => {
         <div className="navigation__bar" onClick={handleLeftBar}>
         <i className="fas fa-bars navigation__barIcon"></i>
         </div>
-        <Link to=''>
-          <img className="navigation__logo" src="https://logofirmy.net/wp-content/uploads/2020/04/YouTube-Logo.png" alt="youtube logo"/>
+        <Link to='/'>
+          <img className="navigation__logo navigation__logo-norm" src="https://logofirmy.net/wp-content/uploads/2020/04/YouTube-Logo.png" alt="youtube logo"/>
         </Link>
       </div>
       <div className="navigation__rightSide">
@@ -141,7 +139,9 @@ const Navigation = () => {
             <hr/>
           </div>
         </i>
-        <img className="fas fa-bell navigation__profile" src="https://johannesippen.com/img/blog/humans-not-users/header.jpg" alt="profilePicture"/>
+        <Link to="/profile">
+          <img className="fas fa-bell navigation__profile" src="https://johannesippen.com/img/blog/humans-not-users/header.jpg" alt="profilePicture"/>
+        </Link>
       </div>
       <div className="navigation__mobileSearch">
         <i className="fas fa-arrow-circle-left navigation__back" onClick={handleSearchActivityClick}></i>
