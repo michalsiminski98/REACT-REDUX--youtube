@@ -1,0 +1,27 @@
+.profile {
+  padding-top: 160px;
+  &__form {
+    font-size: 2.1rem;
+    text-align: center;
+    color: rgb(245, 245, 245);
+  }
+  &__input {
+    margin: 8px 0;
+    padding: 4px 4px;
+    font-size: 1.8rem;
+  }
+  &__submit {
+    margin-top: 8px;
+    padding: 6px 12px;
+    font-size: 2rem;
+    color: rgb(245, 245, 245);
+    background-color: rgb(161, 27, 27);
+    border: 1px solid rgb(161, 27, 27);
+    cursor: pointer;
+  }
+}
+@media (min-width: 1024px) {
+  .profile {
+    padding-top: 15%;
+  }
+}
