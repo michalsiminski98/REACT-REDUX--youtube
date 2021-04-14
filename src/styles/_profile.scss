@@ -9,6 +9,7 @@
     margin: 8px 0;
     padding: 4px 4px;
     font-size: 1.8rem;
+    cursor: auto;
   }
   &__submit {
     margin-top: 8px;
@@ -16,8 +17,12 @@
     font-size: 2rem;
     color: rgb(245, 245, 245);
     background-color: rgb(161, 27, 27);
-    border: 1px solid rgb(161, 27, 27);
+    border: none;
     cursor: pointer;
+  }
+  &__google {
+    margin: 40px 0 0 50%;
+    transform: translateX(-50%);
   }
 }
 @media (min-width: 1024px) {

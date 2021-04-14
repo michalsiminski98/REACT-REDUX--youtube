@@ -6,6 +6,7 @@ import Profile from "../pages/Profile";
 
 
 const Page = () => {
+
   return ( 
     <Switch>
       <Route exact path="/" component ={Menu}/>
