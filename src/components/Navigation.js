@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-const Navigation = () => {
+const Navigation = ({profile}) => {
 
   const [leftBarActive, setLeftBarActive] = useState(false);
   const [searchActive, setSearchActive] = useState(false);
@@ -140,7 +141,7 @@ const Navigation = () => {
           </div>
         </i>
         <Link to="/profile">
-          <img className="fas fa-bell navigation__profile" src="https://johannesippen.com/img/blog/humans-not-users/header.jpg" alt="profilePicture"/>
+          <img className="fas fa-bell navigation__profile" src={profile.picture} alt="profilePicture"/>
         </Link>
       </div>
       <div className="navigation__mobileSearch">
@@ -154,5 +155,9 @@ const Navigation = () => {
   </>
    );
 }
- 
-export default Navigation;
+
+const mapStateTopProps = state => ({
+  profile: state.profile.profile
+})
+
+export default connect(mapStateTopProps)(Navigation);

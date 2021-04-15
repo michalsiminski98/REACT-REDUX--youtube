@@ -32,5 +32,6 @@ const Profile = () => {
     </section>
    );
 }
+
  
 export default Profile;
