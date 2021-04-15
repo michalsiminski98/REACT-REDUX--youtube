@@ -1,16 +1,10 @@
-import { useState } from "react";
 import GoogleLogin from "react-google-login";
 
 const Profile = () => {
-
-  const [profilePictureUrl, setProfilePictureUrl] = useState();
-  const [profileName, setProfileName] = useState();
-
+  
   const handleResponseGoogle = e => {
     console.log(e.profileObj);
-    console.log(e.profileObj.name);
-    setProfileName(e.profileObj);
-    setProfilePictureUrl(e.imageUrl);
+    console.log(e.imageUrl);
   }
   const handleFailureResponseGoogle = e => {
     console.log(e);
