@@ -1,30 +1,31 @@
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-const Menu = ({movies}) => {
+const Menu = ({movies, SetIsLightMode, isLightMode}) => {
+  
+  const handleDarkMode = () => {
+    SetIsLightMode(!isLightMode);
+    console.log(isLightMode);
+  }
 
-  console.log(movies);
-
-  const LeftMenu = () =>{
-    return(
+  const LeftMenu = () => (
     <div className="menu__leftMenu">
       <Link to='/'>
         <div className="menu__leftMenu-option">
         <h3 className="menu__leftMenu-option-h3"><i className="fas fa-home"></i> <br/> <br/> Główna</h3>
         </div>
       </Link>
-      <div className="menu__leftMenu-option">
+      <div className="menu__leftMenu-option" onClick={handleDarkMode}>
       <h3 className="menu__leftMenu-option-h3"><i className="far fa-moon"></i> <br/> <br/> Dark Mode</h3>
       </div>
     </div>
-  )};
-
+  );
 
   return ( 
     <main className="menu">
       {window.innerWidth > 800 && LeftMenu()}
       {movies.map(element => (
-      <div className="menu__movieWrapper">
+      <div key={element.id} className="menu__movieWrapper">
         <Link to={`/watch/${element.name}/${element.author}`}>
           <img className="menu__image" src={element.img} alt="movie"/>
           <h3 className="menu__title">{element.name}</h3>

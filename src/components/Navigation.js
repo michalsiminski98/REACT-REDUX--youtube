@@ -97,7 +97,7 @@ const Navigation = ({profile}) => {
           <i className="fas fa-bars navigation__barIcon" onClick={handleLeftBar}></i>
           </div>
           <Link to='/'>
-            <img className="navigation__logo" src="https://logofirmy.net/wp-content/uploads/2020/04/YouTube-Logo.png" alt="youtube logo"/> 
+            <img className="navigation__logo" src="https://betonnadom.pl/wp-content/uploads/2017/06/YouTube-logo-light-300x187.png" alt="youtube logo"/> 
           </Link>
       </div>
       <hr/>
@@ -115,7 +115,7 @@ const Navigation = ({profile}) => {
         <i className="fas fa-bars navigation__barIcon"></i>
         </div>
         <Link to='/'>
-          <img className="navigation__logo navigation__logo-norm" src="https://logofirmy.net/wp-content/uploads/2020/04/YouTube-Logo.png" alt="youtube logo"/>
+          <img className="navigation__logo navigation__logo-norm" src="https://betonnadom.pl/wp-content/uploads/2017/06/YouTube-logo-light-300x187.png" alt="youtube logo"/>
         </Link>
       </div>
       <div className="navigation__rightSide">
