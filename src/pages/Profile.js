@@ -1,10 +1,11 @@
 import GoogleLogin from "react-google-login";
+import { connect } from "react-redux";
+import { addProfile } from "../actions/profileActions";
 
-const Profile = () => {
+const Profile = ({addProfile}) => {
   
   const handleResponseGoogle = e => {
-    console.log(e.profileObj);
-    console.log(e.imageUrl);
+    addProfile(e.profileObj.name, e.profileObj.imageUrl);
   }
   const handleFailureResponseGoogle = e => {
     console.log(e);
@@ -31,7 +32,11 @@ const Profile = () => {
       />
     </section>
    );
-}
+};
+
+const mapDispatchToProps = dispatch => ({
+  addProfile : (name, picture) => dispatch(addProfile(name, picture))
+});
 
  
-export default Profile;
+export default connect(null, mapDispatchToProps)(Profile);

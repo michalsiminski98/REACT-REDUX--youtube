@@ -1,6 +1,9 @@
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-const Menu = () => {
+const Menu = ({movies}) => {
+
+  console.log(movies);
 
   const LeftMenu = () =>{
     return(
@@ -16,117 +19,26 @@ const Menu = () => {
     </div>
   )};
 
+
   return ( 
     <main className="menu">
       {window.innerWidth > 800 && LeftMenu()}
+      {movies.map(element => (
       <div className="menu__movieWrapper">
-        <Link to={`/watch/${'name'}/${'author'}`}>
-          <img className="menu__image" src="https://i.pinimg.com/originals/45/9d/3c/459d3c561170ec10ea04fd009af42638.jpg" alt="movie"/>
-          <h3 className="menu__title">Avengers- full movie</h3>
-          <p className="menu__author">Joss Whedon</p>
-          <span className="menu__stats">66333 wyświetleń</span>
+        <Link to={`/watch/${element.name}/${element.author}`}>
+          <img className="menu__image" src={element.img} alt="movie"/>
+          <h3 className="menu__title">{element.name}</h3>
+          <p className="menu__author">{element.author}</p>
+          <span className="menu__stats">{element.views} views</span>
         </Link>
       </div>
-      <div className="menu__movieWrapper">
-      <img className="menu__image" src="https://i.pinimg.com/originals/45/9d/3c/459d3c561170ec10ea04fd009af42638.jpg" alt="movie"/>
-      <h3 className="menu__title">Avengers- full movie</h3>
-      <p className="menu__author">Joss Whedon</p>
-      <span className="menu__stats">66333 wyświetleń</span>
-      </div>
-      <div className="menu__movieWrapper">
-      <img className="menu__image" src="https://i.pinimg.com/originals/45/9d/3c/459d3c561170ec10ea04fd009af42638.jpg" alt="movie"/>
-      <h3 className="menu__title">Avengers- full movie</h3>
-      <p className="menu__author">Joss Whedon</p>
-      <span className="menu__stats">66333 wyświetleń</span>
-      </div>
-      <div className="menu__movieWrapper">
-      <img className="menu__image" src="https://i.pinimg.com/originals/45/9d/3c/459d3c561170ec10ea04fd009af42638.jpg" alt="movie"/>
-      <h3 className="menu__title">Avengers- full movie</h3>
-      <p className="menu__author">Joss Whedon</p>
-      <span className="menu__stats">66333 wyświetleń</span>
-      </div>
-      <div className="menu__movieWrapper">
-      <img className="menu__image" src="https://i.pinimg.com/originals/45/9d/3c/459d3c561170ec10ea04fd009af42638.jpg" alt="movie"/>
-      <h3 className="menu__title">Avengers- full movie</h3>
-      <p className="menu__author">Joss Whedon</p>
-      <span className="menu__stats">66333 wyświetleń</span>
-      </div>
-      <div className="menu__movieWrapper">
-      <img className="menu__image" src="https://i.pinimg.com/originals/45/9d/3c/459d3c561170ec10ea04fd009af42638.jpg" alt="movie"/>
-      <h3 className="menu__title">Avengers- full movie</h3>
-      <p className="menu__author">Joss Whedon</p>
-      <span className="menu__stats">66333 wyświetleń</span>
-      </div>
-      <div className="menu__movieWrapper">
-      <img className="menu__image" src="https://i.pinimg.com/originals/45/9d/3c/459d3c561170ec10ea04fd009af42638.jpg" alt="movie"/>
-      <h3 className="menu__title">Avengers- full movie</h3>
-      <p className="menu__author">Joss Whedon</p>
-      <span className="menu__stats">66333 wyświetleń</span>
-      </div>
-      <div className="menu__movieWrapper">
-      <img className="menu__image" src="https://i.pinimg.com/originals/45/9d/3c/459d3c561170ec10ea04fd009af42638.jpg" alt="movie"/>
-      <h3 className="menu__title">Avengers- full movie</h3>
-      <p className="menu__author">Joss Whedon</p>
-      <span className="menu__stats">66333 wyświetleń</span>
-      </div>
-      <div className="menu__movieWrapper">
-      <img className="menu__image" src="https://i.pinimg.com/originals/45/9d/3c/459d3c561170ec10ea04fd009af42638.jpg" alt="movie"/>
-      <h3 className="menu__title">Avengers- full movie</h3>
-      <p className="menu__author">Joss Whedon</p>
-      <span className="menu__stats">66333 wyświetleń</span>
-      </div>
-      <div className="menu__movieWrapper">
-      <img className="menu__image" src="https://i.pinimg.com/originals/45/9d/3c/459d3c561170ec10ea04fd009af42638.jpg" alt="movie"/>
-      <h3 className="menu__title">Avengers- full movie</h3>
-      <p className="menu__author">Joss Whedon</p>
-      <span className="menu__stats">66333 wyświetleń</span>
-      </div>
-      <div className="menu__movieWrapper">
-      <img className="menu__image" src="https://i.pinimg.com/originals/45/9d/3c/459d3c561170ec10ea04fd009af42638.jpg" alt="movie"/>
-      <h3 className="menu__title">Avengers- full movie</h3>
-      <p className="menu__author">Joss Whedon</p>
-      <span className="menu__stats">66333 wyświetleń</span>
-      </div>
-      <div className="menu__movieWrapper">
-      <img className="menu__image" src="https://i.pinimg.com/originals/45/9d/3c/459d3c561170ec10ea04fd009af42638.jpg" alt="movie"/>
-      <h3 className="menu__title">Avengers- full movie</h3>
-      <p className="menu__author">Joss Whedon</p>
-      <span className="menu__stats">66333 wyświetleń</span>
-      </div>
-      <div className="menu__movieWrapper">
-      <img className="menu__image" src="https://i.pinimg.com/originals/45/9d/3c/459d3c561170ec10ea04fd009af42638.jpg" alt="movie"/>
-      <h3 className="menu__title">Avengers- full movie</h3>
-      <p className="menu__author">Joss Whedon</p>
-      <span className="menu__stats">66333 wyświetleń</span>
-      </div>
-      <div className="menu__movieWrapper">
-      <img className="menu__image" src="https://i.pinimg.com/originals/45/9d/3c/459d3c561170ec10ea04fd009af42638.jpg" alt="movie"/>
-      <h3 className="menu__title">Avengers- full movie</h3>
-      <p className="menu__author">Joss Whedon</p>
-      <span className="menu__stats">66333 wyświetleń</span>
-      </div>
-      <div className="menu__movieWrapper">
-      <img className="menu__image" src="https://i.pinimg.com/originals/45/9d/3c/459d3c561170ec10ea04fd009af42638.jpg" alt="movie"/>
-      <h3 className="menu__title">Avengers- full movie</h3>
-      <p className="menu__author">Joss Whedon</p>
-      <span className="menu__stats">66333 wyświetleń</span>
-      </div>
-      <div className="menu__movieWrapper">
-      <img className="menu__image" src="https://i.pinimg.com/originals/45/9d/3c/459d3c561170ec10ea04fd009af42638.jpg" alt="movie"/>
-      <h3 className="menu__title">Avengers- full movie</h3>
-      <p className="menu__author">Joss Whedon</p>
-      <span className="menu__stats">66333 wyświetleń</span>
-      </div>
-
+    ))}
     </main>
    );
 };
 
-    // redux for showing products from itemReducer.js
-  //   const mapStateToProps = state => {
-  //     return {
-  //         movies: state.movies.movies,
-  //     }
-  // }
- 
-export default Menu;
+  const mapStateTopProps = state => ({
+    movies: state.movies.movies,
+  })
+  
+  export default connect(mapStateTopProps)(Menu);
