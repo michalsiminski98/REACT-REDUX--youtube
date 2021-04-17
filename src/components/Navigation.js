@@ -142,7 +142,7 @@ const Navigation = ({profile}) => {
           </div>
         </i>
         <Link to="/profile">
-          <img className="fas fa-bell navigation__profile" src={profile.picture} alt="profilePicture"/>
+          <img className="navigation__profile" src={profile.picture} alt="profilePicture"/>
         </Link>
       </div>
       <div className="navigation__mobileSearch">

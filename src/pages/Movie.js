@@ -1,13 +1,21 @@
 import { connect } from "react-redux";
 
-const Movie = ({profile}) => {
+const Movie = (props) => {
+
+  // getting data of profile that we logged in
+  const {profile} = props;
+  // getting data of current item from shop.js
+  const {name, movie} = props.location.state.movieData.element;
+
+  console.log(movie);
+
   return (
     <>
       <section className="movie">
         <div className="movie__movie">
-          <iframe className="movie__iframe" frameBorder="none" title="movie" src="https://www.youtube.com/watch?v=m28klmKlk0U"></iframe>
-          <span className="movie__hashtags">#Movie</span>
-          <h2 className="movie__title">Movie Movie Movie Movie</h2>
+          <iframe className="movie__iframe" src={movie} title="YouTube video player" frameBorder="0" allowFullScreen></iframe>
+          <span className="movie__hashtags">#{name}</span>
+          <h2 className="movie__title">{name}</h2>
           <div className="movie__stats">
             <div className="movie__likes">
             <i className="fas fa-thumbs-up movie__like"></i>

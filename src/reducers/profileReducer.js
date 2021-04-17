@@ -3,7 +3,7 @@ import * as ActionTypes from "../actions/profileTypes";
 const INITIAL_STATE = {
   profile:{
       name: "",
-      picture: "https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png",
+      picture: "https://esportnow.pl/wp-content/uploads/2017/09/profile.png",
     },
 }
 
