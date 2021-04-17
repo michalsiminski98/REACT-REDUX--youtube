@@ -1,13 +1,16 @@
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Movies from './MenuComponents/Movies';
 
 const Menu = ({movies, SetIsLightMode, isLightMode}) => {
   
+  // dark mode handler for left navbar
   const handleDarkMode = () => {
     SetIsLightMode(!isLightMode);
     console.log(isLightMode);
   }
 
+  // menu for bigger width
   const LeftMenu = () => (
     <div className="menu__leftMenu">
       <Link to='/'>
@@ -24,16 +27,9 @@ const Menu = ({movies, SetIsLightMode, isLightMode}) => {
   return ( 
     <main className="menu">
       {window.innerWidth > 800 && LeftMenu()}
-      {movies.map(element => (
-      <div key={element.id} className="menu__movieWrapper">
-        <Link to={`/watch/${element.name}/${element.author}&output=embed`}>
-          <img className="menu__image" src={element.img} alt="movie"/>
-          <h3 className="menu__title">{element.name}</h3>
-          <p className="menu__author">{element.author}</p>
-          <span className="menu__stats">{element.views} views</span>
-        </Link>
-      </div>
-    ))}
+      <Movies
+      movies = {movies}
+      />
     </main>
    );
 };

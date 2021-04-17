@@ -7,6 +7,7 @@ import { useState } from 'react';
 
 function App() {
 
+  // for dark mode content api
   const [isLightMode, SetIsLightMode] = useState(false);
 
   return (

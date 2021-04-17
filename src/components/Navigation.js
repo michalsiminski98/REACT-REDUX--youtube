@@ -79,6 +79,7 @@ const Navigation = ({profile}) => {
     setNotificationActive(!notificationActive);
   }
 
+  // hiding nav element when we clicked on other
   const hideNavElements = () => {
     document.querySelector('.navigation__board-messsage').style.display='none';
     document.querySelector('.navigation__submit-messsage').style.display='none';

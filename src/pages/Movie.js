@@ -50,6 +50,7 @@ const Movie = ({profile}) => {
    );
 }
 
+// movie reducer has movies data
 const mapStateToProps = state => ({
   profile : state.profile.profile,
 })

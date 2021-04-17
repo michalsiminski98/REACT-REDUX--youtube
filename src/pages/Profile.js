@@ -4,6 +4,7 @@ import { addProfile } from "../actions/profileActions";
 
 const Profile = ({addProfile}) => {
   
+  // redux add profile - taking picture and name from google
   const handleResponseGoogle = e => {
     addProfile(e.profileObj.name, e.profileObj.imageUrl);
   }
@@ -11,6 +12,7 @@ const Profile = ({addProfile}) => {
     console.log(e);
   }
 
+  // form shouldnt work here
   const handleOnChange = () => {}
 
   return ( 
@@ -38,5 +40,4 @@ const mapDispatchToProps = dispatch => ({
   addProfile : (name, picture) => dispatch(addProfile(name, picture))
 });
 
- 
 export default connect(null, mapDispatchToProps)(Profile);
