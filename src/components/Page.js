@@ -15,7 +15,7 @@ const Page = ({SetIsLightMode, isLightMode}) => {
         isLightMode={isLightMode}
         />
       </Route>
-      <Route path="/watch/:name/:author">
+      <Route path="/watch/:name/:author&output=embed">
         <Movie/>
       </Route>
       <Route path="/profile" component={Profile}/>
