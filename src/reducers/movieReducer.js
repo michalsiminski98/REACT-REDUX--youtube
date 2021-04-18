@@ -1,3 +1,5 @@
+import * as ActionTypes from "../actions/moviesTypes";
+
 const INITIAL_STATE = {
   movies: [
 
@@ -33,6 +35,12 @@ const INITIAL_STATE = {
 }
 const movieReducer = (state = INITIAL_STATE, action) => {
   switch(action.type){
+    case ActionTypes.ADD_COMMENT:
+      return{
+        movie:  
+        {text: action.payload.text,
+        picture: action.payload.picture}
+      }
       default:
         return state;
     }

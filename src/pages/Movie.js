@@ -6,9 +6,7 @@ const Movie = (props) => {
   const {profile} = props;
   // getting data of current item from shop.js
   const {name, movie} = props.location.state.movieData.element;
-
-  console.log(movie);
-
+  
   return (
     <>
       <section className="movie">
