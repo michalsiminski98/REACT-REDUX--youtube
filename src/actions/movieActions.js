@@ -1,9 +1,10 @@
 import * as ActionTypes from './moviesTypes';
 
-export const addComment = (text, profilePicture) => ({
+export const addComment = (MovieId, commentText, profilePicture) => ({
   type: ActionTypes.ADD_COMMENT,
   payload: {
-    text: text,
+    id: MovieId,
+    text: commentText,
     picture: profilePicture,
   }
 })

@@ -1,11 +1,13 @@
 import { connect } from "react-redux";
+import Comments from "./MovieComponents/comments";
+import { addComment } from "../actions/movieActions";
 
 const Movie = (props) => {
 
   // getting data of profile that we logged in
   const {profile} = props;
   // getting data of current item from shop.js
-  const {name, movie} = props.location.state.movieData.element;
+  const {name, movie, comments} = props.location.state.movieData.element;
   
   return (
     <>
@@ -39,18 +41,9 @@ const Movie = (props) => {
           <input className="comments__input" type="text"/>
           <input className="comments__submit" type="submit"/>
         </form>
-        <div className="comments__comment">
-        <img className="comments__profile" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/1024px-User_icon_2.svg.png" alt="profilePicture"/>
-        <p className="comments_text">Super sprawa!</p>
-        </div>
-        <div className="comments__comment">
-        <img className="comments__profile" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/1024px-User_icon_2.svg.png" alt="profilePicture"/>
-        <p className="comments_text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem adipisci laudantium neque nisi distinctio reprehenderit nemo dolorem quod aliquam. Nihil, repellat adipisci. Natus voluptates autem harum officia, minus sapiente quaerat?</p>
-        </div>
-        <div className="comments__comment">
-        <img className="comments__profile comments__profile-comment" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/User_icon_2.svg/1024px-User_icon_2.svg.png" alt="profilePicture"/>
-        <p className="comments_text">Cool</p>
-        </div>
+        <Comments
+        comments= {comments}
+        />
       </section>
     </>
    );
@@ -60,5 +53,9 @@ const Movie = (props) => {
 const mapStateToProps = state => ({
   profile : state.profile.profile,
 })
+
+const mapDispatchToProps = dispatch => ({
+  addComment: id => dispatch(addComment(id)),
+})
  
-export default connect(mapStateToProps)(Movie);
+export default connect(mapStateToProps, mapDispatchToProps)(Movie);
