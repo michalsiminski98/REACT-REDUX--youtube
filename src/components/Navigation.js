@@ -1,6 +1,17 @@
 import { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+  const Nav = styled.nav`
+  background-color: ${props => props.theme.navBackground};
+  `;
+  const LeftNav = styled.div`
+  background-color: ${props => props.theme.navBackground};
+  `;
+  const Hr = styled.hr`
+  /* border-top: red; */
+  `;
 
 const Navigation = ({profile}) => {
 
@@ -92,7 +103,7 @@ const Navigation = ({profile}) => {
 
   return ( 
   <>
-    <div className="barMenu">
+    <LeftNav className="barMenu">
         <div className="barMenu__main">
           <div className="navigation__bar">
           <i className="fas fa-bars navigation__barIcon" onClick={handleLeftBar}></i>
@@ -101,16 +112,16 @@ const Navigation = ({profile}) => {
             <img className="navigation__logo" src="https://betonnadom.pl/wp-content/uploads/2017/06/YouTube-logo-light-300x187.png" alt="youtube logo"/> 
           </Link>
       </div>
-      <hr/>
+      <Hr/>
       <Link to='/'>
         <div className="barMenu__firstSection">
           <h3 className="barMenu__item"><i className="fas fa-home"></i> Strona główna</h3>
         </div>
       </Link>
-    </div>
+    </LeftNav>
     <div className="barBackground" onClick={handleLeftBar}>
     </div>
-    <nav className='navigation'>
+    <Nav className='navigation'>
       <div className="navigation__leftSide">
         <div className="navigation__bar" onClick={handleLeftBar}>
         <i className="fas fa-bars navigation__barIcon"></i>
@@ -152,7 +163,7 @@ const Navigation = ({profile}) => {
           <i className="fas fa-search navigation__searchIconMobile"></i>
         </button>
       </div>
-    </nav>
+    </Nav>
   </>
    );
 }

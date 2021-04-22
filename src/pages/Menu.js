@@ -2,12 +2,16 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Movies from './MenuComponents/Movies';
 
-const Menu = ({movies, SetIsLightMode, isLightMode}) => {
+const Menu = ({movies, SetTheme, theme}) => {
   
   // dark mode handler for left navbar
   const handleDarkMode = () => {
-    SetIsLightMode(!isLightMode);
-    console.log(isLightMode);
+    if(theme === "light"){
+    SetTheme("dark");
+    }
+    if(theme === "dark"){
+      SetTheme("light");
+      }
   }
 
   // menu for bigger width

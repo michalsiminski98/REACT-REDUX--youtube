@@ -5,14 +5,14 @@ import Movie from "../pages/Movie";
 import Profile from "../pages/Profile";
 
 
-const Page = ({SetIsLightMode, isLightMode}) => {
+const Page = ({SetTheme, theme}) => {
 
   return ( 
     <Switch>
       <Route exact path="/">
         <Menu
-        SetIsLightMode={SetIsLightMode}
-        isLightMode={isLightMode}
+        SetTheme={SetTheme}
+        theme={theme}
         />
       </Route>
       <Route path="/watch/:name/:author" component={Movie}>
