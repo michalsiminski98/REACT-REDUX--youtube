@@ -19,7 +19,7 @@ const ElementH3 = styled.div`
 `;
 
 const Main = styled.div`
-  background-color: ${props => props.theme.navBackground};
+  background-color: ${props => props.theme.background};
 `;
 
 

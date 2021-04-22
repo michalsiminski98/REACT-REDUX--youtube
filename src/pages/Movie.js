@@ -4,7 +4,7 @@ import { addComment } from "../actions/movieActions";
 import styled from 'styled-components';
 
 const Section = styled.section`
-  background-color: ${props => props.theme.navBackground};
+  background-color: ${props => props.theme.background};
 `;
 const MovieTitle = styled.h2`
   color: ${props => props.theme.color};
