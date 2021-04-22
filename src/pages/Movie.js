@@ -1,6 +1,17 @@
 import { connect } from "react-redux";
 import Comments from "./MovieComponents/comments";
 import { addComment } from "../actions/movieActions";
+import styled from 'styled-components';
+
+const Section = styled.section`
+  background-color: ${props => props.theme.navBackground};
+`;
+const MovieTitle = styled.h2`
+  color: ${props => props.theme.color};
+`;
+const Hr = styled.hr`
+  border-top: 1px solid grey;
+`;
 
 const Movie = (props) => {
 
@@ -11,11 +22,11 @@ const Movie = (props) => {
   
   return (
     <>
-      <section className="movie">
+      <Section className="movie">
         <div className="movie__movie">
           <iframe className="movie__iframe" src={movie} title="YouTube video player" frameBorder="0" allowFullScreen></iframe>
           <span className="movie__hashtags">#{name}</span>
-          <h2 className="movie__title">{name}</h2>
+          <MovieTitle className="movie__title">{name}</MovieTitle>
           <div className="movie__stats">
             <div className="movie__likes">
             <i className="fas fa-thumbs-up movie__like"></i>
@@ -30,12 +41,12 @@ const Movie = (props) => {
               <span className="movie__restStatsSpecific">Zapisz</span>
             </div>
           </div>
-          <hr className="movie__hr"/>
+          <Hr className="movie__hr"/>
         </div>
-      </section>
-      <section className="comments">
+      </Section>
+      <Section className="comments">
         <h3 className="comments__titlecomments">Komentarze</h3>
-        <hr className="comments__hr"/>
+        <Hr className="comments__hr"/>
         <form className="comments__form">
           <img className="comments__profile" src={profile.picture} alt="profilePicture"/>
           <input className="comments__input" type="text"/>
@@ -44,7 +55,7 @@ const Movie = (props) => {
         <Comments
         comments= {comments}
         />
-      </section>
+      </Section>
     </>
    );
 }

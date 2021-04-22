@@ -50,10 +50,9 @@
 }
 // comments
 .comments {
-  width: 95vw;
-  margin-left: 50%;
-  margin-bottom: 160px;
-  transform: translateX(-50%);
+  width: 100vw;
+  padding: 0 80px;
+  padding-bottom: 160px;
   font-size: 1.7rem;
   color: #6e6e6e;
   &__hr {

@@ -10,7 +10,7 @@ import styled from 'styled-components';
   background-color: ${props => props.theme.navBackground};
   `;
   const Hr = styled.hr`
-  /* border-top: red; */
+  border-top: 1px solid grey;
   `;
 
 const Navigation = ({profile}) => {

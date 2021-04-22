@@ -1,6 +1,28 @@
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Movies from './MenuComponents/Movies';
+import styled from 'styled-components';
+
+const LeftDiv = styled.div`
+  background-color: ${props => props.theme.navBackground};
+`;
+
+const InsideLeftDiv = styled.div`
+&:hover{
+  background-color: ${props => props.theme.navBackground};
+  opacity:0.8;
+}
+`;
+
+const ElementH3 = styled.div`
+  color: ${props => props.theme.color};
+`;
+
+const Main = styled.div`
+  background-color: ${props => props.theme.navBackground};
+`;
+
+
 
 const Menu = ({movies, SetTheme, theme}) => {
   
@@ -16,25 +38,25 @@ const Menu = ({movies, SetTheme, theme}) => {
 
   // menu for bigger width
   const LeftMenu = () => (
-    <div className="menu__leftMenu">
+    <LeftDiv className="menu__leftMenu">
       <Link to='/'>
-        <div className="menu__leftMenu-option">
-        <h3 className="menu__leftMenu-option-h3"><i className="fas fa-home"></i> <br/> <br/> Główna</h3>
-        </div>
+        <InsideLeftDiv className="menu__leftMenu-option">
+        <ElementH3 className="menu__leftMenu-option-h3"><i className="fas fa-home"></i> <br/> <br/> Główna</ElementH3>
+        </InsideLeftDiv>
       </Link>
-      <div className="menu__leftMenu-option" onClick={handleDarkMode}>
-      <h3 className="menu__leftMenu-option-h3"><i className="far fa-moon"></i> <br/> <br/> Dark Mode</h3>
-      </div>
-    </div>
+      <InsideLeftDiv className="menu__leftMenu-option" onClick={handleDarkMode}>
+      <ElementH3 className="menu__leftMenu-option-h3"><i className="far fa-moon"></i> <br/> <br/> Dark Mode</ElementH3>
+      </InsideLeftDiv>
+    </LeftDiv>
   );
 
   return ( 
-    <main className="menu">
+    <Main className="menu">
       {window.innerWidth > 800 && LeftMenu()}
       <Movies
       movies = {movies}
       />
-    </main>
+    </Main>
    );
 };
 
